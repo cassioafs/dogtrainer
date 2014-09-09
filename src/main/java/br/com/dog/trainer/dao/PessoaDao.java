@@ -2,11 +2,14 @@ package br.com.dog.trainer.dao;
 
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.dog.trainer.model.Pessoa;
 
+
+@RequestScoped
 public class PessoaDao {
 
 	private final EntityManager entityManager;

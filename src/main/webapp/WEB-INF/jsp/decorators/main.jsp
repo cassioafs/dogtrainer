@@ -3,7 +3,7 @@
 
 <!DOCTYPE">
 
-<html class="ls-theme-light-green ls-html-nobg  ls-screen-lg">
+<html class="ls-theme-light-green ls-screen-lg">
 <head>
 <title>Dog Trainer</title>
 
@@ -13,7 +13,7 @@
 <decorator:head />
 </head>
 <body>
-
+	
 	<div class="ls-topbar">
 
 		<!-- Notification bar -->
@@ -30,7 +30,7 @@
 				<a href="#" class="ls-ico-user"> Cássio Alves </a>
 				<nav class="ls-dropdown-nav ls-user-menu">
 					<ul>
-						<li><a href="#">Conta</a></li>
+						<li><a href="<c:url value='/pessoa/show/2'/>">Conta</a></li>
 						<li><a href="#">Logout</a></li>
 					</ul>
 				</nav>
@@ -41,21 +41,21 @@
 
 		<!-- Nome do produto/marca -->
 		<h1 class="ls-brand-name">
-			<a class="ls-ico-earth"href="/locawebstyle/documentacao/exemplos/boilerplate">Dog Trainer</a>
+			<a class="ls-ico-earth"href="/locawebstyle/documentacao/exemplos/boilerplate"><fmt:message key="label.nome.app"/></a>
 		</h1>
 	</div>
 
 	<aside class="ls-sidebar">
 		<nav class="ls-menu">
 			<ul>
-				<li><a href="#" class="fa fa-home">Página inicial</a></li>
-				<li><a href="#" class="fa fa-github-alt"> Cães</a></li>
-				<li><a href="#" class="fa fa-user">Proprietários</a></li>
-				<li><a href="#" class="fa fa-book">Aulas</a></li>
-				<li><a href="#" class="fa fa-calendar">Agenda</a></li>
-				<li><a href="#" class="fa fa-hand-o-right">Comandos</a></li>
-				<li><a href="#" class="fa fa-image">Galeria</a></li>
-				<li><a href="#" class="fa fa-area-chart">Relatórios</a></li>
+				<li><a href="#" class="fa fa-home"> <fmt:message key="label.menu.pagina.inicial"/></a></li>
+				<li><a href="#" class="fa fa-github-alt"><fmt:message key="label.nome.app"/></a></li>
+				<li><a href="#" class="fa fa-user"> <fmt:message key="label.menu.proprietarios"/></a></li>
+				<li><a href="#" class="fa fa-book"><fmt:message key="label.menu.aulas"/></a></li>
+				<li><a href="#" class="fa fa-calendar"><fmt:message key="label.menu.agenda"/></a></li>
+				<li><a href="#" class="fa fa-hand-o-right"><fmt:message key="label.menu.comandos"/></a></li>
+				<li><a href="#" class="fa fa-image"><fmt:message key="label.menu.galeria"/></a></li>
+				<li><a href="#" class="fa fa-area-chart"><fmt:message key="label.menu.relatorios"/></a></li>
 			</ul>
 		</nav>
 	</aside>
@@ -64,16 +64,15 @@
 	<main class="ls-main ">
 	<div class="container-fluid">
 	
-		<decorator:body />
-
+		
 
 	</div>
 	</main>
-
-	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script
-		src="http://assets.locaweb.com.br/locastyle/3.3.0/javascripts/locastyle.js"
-		type="text/javascript"></script>
+		<script type="text/javascript"
+			src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	
+		<script
+			src="http://assets.locaweb.com.br/locastyle/3.3.0/javascripts/locastyle.js"
+			type="text/javascript"></script>
 </body>
 </html>
