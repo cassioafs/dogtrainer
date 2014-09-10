@@ -9,7 +9,7 @@
 			<class>br.com.dog.trainer.model.Pessoa</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://${OPENSHIFT_MYSQL_DB_HOST}:${OPENSHIFT_MYSQL_DB_PORT}/${OPENSHIFT_APP_NAME}"></property>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.7.52.130:3306/dogtrainer"></property>
 			<property name="javax.persistence.jdbc.user" value="admin8KyfrGl" />
 			<property name="javax.persistence.jdbc.password" value="iyuSLz7swVRY" />
 			
