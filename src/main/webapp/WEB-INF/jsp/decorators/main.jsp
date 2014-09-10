@@ -1,7 +1,7 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 
-<!DOCTYPE">
+<!DOCTYPE html>
 
 <html class="ls-theme-light-green ls-screen-lg">
 <head>
@@ -13,7 +13,7 @@
 <decorator:head />
 </head>
 <body>
-	
+
 	<div class="ls-topbar">
 
 		<!-- Notification bar -->
@@ -63,13 +63,15 @@
 	
 	<main class="ls-main ">
 	<div class="container-fluid">
+		<script type="text/javascript"
+			src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	
+	<form action="" method="put"></form>
 		
+		<decorator:body />
 
 	</div>
 	</main>
-		<script type="text/javascript"
-			src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	
 		<script
 			src="http://assets.locaweb.com.br/locastyle/3.3.0/javascripts/locastyle.js"

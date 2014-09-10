@@ -24,16 +24,21 @@ public class PessoaDao {
 		this.entityManager = entityManager;
 		
 	}
-	public Pessoa buscarPorId(Long id) {
+	public Pessoa findById(Long id) {
 		return entityManager.find(Pessoa.class, id);
 	}
 
-	public void inserir(Pessoa pessoa) {
+	public void insert(Pessoa pessoa) {
 		
 		entityManager.persist(pessoa);
+	}
+	
+	public void update(Pessoa pessoa) {
+		
+		entityManager.merge(pessoa);
 	}	
 
-	public List<Pessoa> buscarTodos() {
+	public List<Pessoa> findAll() {
 		return entityManager.createQuery("from Pessoa", Pessoa.class).getResultList();
 	}
 

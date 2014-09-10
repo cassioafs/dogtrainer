@@ -1,10 +1,10 @@
 <h1 class="ls-title-intro ls-ico-users"> <fmt:message key="label.cadastro.pessoas"/> </h1>
-	<p>
-	<a href="<c:url value="/pessoa/2/edit"/>" class="ls-btn-primary">
-		<fmt:message key="label.padrao.alterar"/>
+<p>
+	<a href="<c:url value="/pessoa/2/edit"/>" class="ls-btn"> <fmt:message
+			key="label.padrao.alterar" />
 	</a>
 </p>
- <div class="ls-box">
+<div class="ls-box">
  	
  	<label class="ls-label col-md-6 col-lg-8">
  		<span>
