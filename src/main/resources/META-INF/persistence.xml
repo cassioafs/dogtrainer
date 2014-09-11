@@ -6,15 +6,12 @@
 	version="2.0">
 	
 	<persistence-unit name="default">
-	<!-- 
-			 <jta-data-source>java:jboss/datasources/dogtrainer</jta-data-source>
-	 -->
-			<class>br.com.dog.trainer.model.Pessoa</class>
+		<class>br.com.dog.trainer.model.Pessoa</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dogtrainer"></property>
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="root" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://${env.OPENSHIFT_MYSQL_DB_HOST}:${env.MYSQL_POSTGRESQL_DB_PORT}/${env.OPENSHIFT_APP_NAME}"></property>
+			<property name="javax.persistence.jdbc.user" value="admin8KyfrGl" />
+			<property name="javax.persistence.jdbc.password" value="iyuSLz7swVRY" />
 			<!-- 
 			 -->
 			<property name="hibernate.show_sql" value="true" />
