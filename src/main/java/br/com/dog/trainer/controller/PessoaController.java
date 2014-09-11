@@ -29,7 +29,7 @@ public class PessoaController {
 	@Post("/pessoa")
 	public void insert(Pessoa pessoa) {
 		pessoaDao.insert(pessoa);
-		result.redirectTo(PessoaController.class).form();
+		result.redirectTo(PessoaController.class).show(pessoa);
 	}
 	
 	@Get("/pessoa/{pessoa.id}/edit")

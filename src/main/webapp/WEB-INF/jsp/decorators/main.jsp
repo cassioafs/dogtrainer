@@ -40,16 +40,16 @@
 		<span class="ls-show-sidebar ls-ico-menu"></span>
 
 		<!-- Nome do produto/marca -->
-		<h1 class="ls-brand-name">
+		<h2 class="ls-brand-name">
 			<a class="ls-ico-earth"href="/locawebstyle/documentacao/exemplos/boilerplate"><fmt:message key="label.nome.app"/></a>
-		</h1>
+		</h2>
 	</div>
 
 	<aside class="ls-sidebar">
 		<nav class="ls-menu">
 			<ul>
 				<li><a href="#" class="fa fa-home"> <fmt:message key="label.menu.pagina.inicial"/></a></li>
-				<li><a href="#" class="fa fa-github-alt"><fmt:message key="label.nome.app"/></a></li>
+				<li><a href="#" class="fa fa-github-alt"><fmt:message key="label.menu.caes"/></a></li>
 				<li><a href="#" class="fa fa-user"> <fmt:message key="label.menu.proprietarios"/></a></li>
 				<li><a href="#" class="fa fa-book"><fmt:message key="label.menu.aulas"/></a></li>
 				<li><a href="#" class="fa fa-calendar"><fmt:message key="label.menu.agenda"/></a></li>
@@ -66,8 +66,6 @@
 		<script type="text/javascript"
 			src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	
-	<form action="" method="put"></form>
-		
 		<decorator:body />
 
 	</div>

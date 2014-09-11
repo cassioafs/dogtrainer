@@ -4,9 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link href="http://assets.locaweb.com.br/locastyle/3.3.0/stylesheets/locastyle.css" rel="stylesheet" type="text/css"/>
+<title>Dog Trainer</title>
 </head>
 <body>
-	tela index
+	<div >
+		<p>
+
+			Essa é a index, ainda falta muita coisa pra fazer, clique aqui para
+			ver a tela de login <a href="<c:url value="/login"/>"> Tela de
+				Login</a>;
+		</p>
+		<p>
+			E clique aqui para ver como está ficando o layout do sistema. <a
+				href="<c:url value="/pessoa/form"/>"> esse é o fomulario de
+				pessoa</a>
+		</p>
+	</div>
+
 </body>
 </html>
