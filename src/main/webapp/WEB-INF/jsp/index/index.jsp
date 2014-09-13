@@ -12,13 +12,12 @@
 		<p>
 
 			Essa é a index, ainda falta muita coisa pra fazer, clique aqui para
-			ver a tela de login <a href="<c:url value="/login"/>"> Tela de
-				Login</a>;
+			ver a tela de login <a href="<c:url value="/login"/>"> Tela deLogin</a>;
+			
 		</p>
 		<p>
-			E clique aqui para ver como está ficando o layout do sistema. <a
-				href="<c:url value="/pessoa/form"/>"> esse é o fomulario de
-				pessoa</a>
+			 <a
+				href="<c:url value="/pessoa/form"/>"> Clique aqui</a> para fazer seu cadastro
 		</p>
 	</div>
 

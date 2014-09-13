@@ -9,12 +9,18 @@ import javax.persistence.Id;
 @Entity
 public class Pessoa {
 
+	/**
+	 * 
+	 */
 	@Id @GeneratedValue
 	private Long id;
 	private String nome;
 	private String sobrenome;
 	
+	//dados para login no sistema
 	private String email;
+	private String senha;
+	
 	private String idade;
 	
 	private String telefone;
@@ -45,12 +51,6 @@ public class Pessoa {
 	}
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public String getIdade() {
 		return idade;
@@ -111,5 +111,17 @@ public class Pessoa {
 	}
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

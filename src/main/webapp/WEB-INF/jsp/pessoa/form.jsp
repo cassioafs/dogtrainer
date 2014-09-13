@@ -31,6 +31,19 @@
 				value="${pessoa.nome}">
 			</label>
 		</div>
+		
+		<div class="row">
+			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
+						key="label.email" /></span> <input type="text" name="pessoa.email"
+				value="${pessoa.email}">
+			</label>
+		</div>
+		<div class="row">
+			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
+						key="label.senha" /></span> <input type="text" name="pessoa.senha"
+				value="${pessoa.senha}">
+			</label>
+		</div>
 
 		<div class="row">
 			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
@@ -45,15 +58,8 @@
 				value="${pessoa.idade}">
 			</label>
 		</div>
-
-		<div class="row">
-			<label class="ls-label col-md-3"> <span class="ls-label-text"><fmt:message
-						key="label.email" /></span> <input type="text" name="pessoa.email"
-				value="${pessoa.email}">
-			</label>
-		</div>
-
-		<div class="row">
+	
+	<div class="row">
 			<label class="ls-label col-md-3"> <span class="ls-label-text"><fmt:message
 						key="label.telefone" /></span> <input type="text" name="pessoa.telefone"
 				value="${pessoa.telefone}" class="ls-mask-phone8_with_ddd"

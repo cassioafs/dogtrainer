@@ -4,12 +4,33 @@
 			key="label.padrao.alterar" />
 	</a>
 </p>
+
+<p>
+	<a href="<c:url value="/usuario/form"/>" class="ls-btn"> <fmt:message
+			key="label.padrao.criar.usuario" />
+	</a>
+</p>
+
 <div class="ls-box">
  	
  	<label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.nome"/>:</b>
 	      	${pessoa.nome}
+      	</span>
+      </label>
+	      	
+ 	<label class="ls-label col-md-6 col-lg-8">
+ 		<span>
+        <b class="ls-label-text"><fmt:message key="label.email"/>:</b>
+	      	${pessoa.email}
+      	</span>
+      </label>
+ 	
+ 	<label class="ls-label col-md-6 col-lg-8">
+ 		<span>
+        <b class="ls-label-text"><fmt:message key="label.senha"/>:</b>
+	      	${pessoa.senha}
       	</span>
       </label>
 
@@ -24,13 +45,6 @@
  		<span>
         <b class="ls-label-text"><fmt:message key="label.idade"/>:</b>
 	      	${pessoa.idade}
-      	</span>
-      </label>
-      
-      <label class="ls-label col-md-6 col-lg-8">
- 		<span>
-        <b class="ls-label-text"><fmt:message key="label.email"/>:</b>
-	      	${pessoa.email}
       	</span>
       </label>
       

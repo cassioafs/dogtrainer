@@ -22,23 +22,22 @@
 		<!-- 
       <h1 class="ls-login-logo"><img title="Logo login" src="../../../assets/images/locastyle/logo-locaweb.jpg" />
       </h1> -->
-      <form role="form" class="ls-form ls-login-form" action="">
+      <form role="form" class="ls-form ls-login-form" action="<c:url value="/autenticar"/>" method="post">
         <fieldset>
 
           <label class="ls-label">
-            <input class="ls-login-bg-user ls-field-lg" type="text" placeholder="<fmt:message key="label.usuario"/>" required autofocus>
-            <b class="ls-label-text ls-hidden-accessible"> <fmt:message key="label.usuario"/></b>
+            <input class="ls-login-bg-user ls-field-lg" type="text" placeholder="<fmt:message key="label.email"/>" required autofocus name="pessoa.email">
           </label>
 
           <label class="ls-label">
             <b class="ls-label-text ls-hidden-accessible"><fmt:message key="label.senha"/></b>
-            <input class="ls-login-bg-password ls-field-lg" type="password" placeholder="<fmt:message key="label.senha"/>" required>
+            <input class="ls-login-bg-password ls-field-lg" type="password" placeholder="<fmt:message key="label.senha"/>" required name="pessoa.senha">
           </label>
 
           <p><a class="ls-login-forgot" href="forgot-password"><fmt:message key="label.esqueci.senha"/></a></p>
 
           <input type="submit" value="Entrar" class="ls-btn-primary ls-btn-block ls-btn-lg">
-          <p class="ls-txt-center ls-login-signup"> <a href="#"><fmt:message key="label.cadastre"/></a></p>
+          <p class="ls-txt-center ls-login-signup"> <a href="/pessoa/form" ><fmt:message key="label.cadastre"/></a></p>
 
         </fieldset>
       </form>
@@ -47,5 +46,13 @@
   </div>
 </div>
 
+
 </body>
+
+<script>
+	<c:if test="${not empty erro}">
+		alert("${erro}");
+	</c:if>
+	
+</script>
 </html>
