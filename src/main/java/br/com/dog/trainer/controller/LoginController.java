@@ -6,16 +6,17 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
-import br.com.dog.trainer.dao.PessoaDao;
-import br.com.dog.trainer.model.Pessoa;
-import br.com.dog.trainer.sessao.PessoaLogada;
+import br.com.dog.trainer.dao.UsuarioDao;
+import br.com.dog.trainer.model.Adestrador;
+import br.com.dog.trainer.model.Usuario;
+import br.com.dog.trainer.sessao.UsuarioLogado;
 
 @Controller
 public class LoginController {
 
-	@Inject private PessoaLogada usuarioLogado;
+	@Inject private UsuarioLogado usuarioLogado;
 	
-	@Inject private PessoaDao pessoaDao;
+	@Inject private UsuarioDao usuarioDao;
 	
 	@Inject private Result result;
 	
@@ -24,16 +25,15 @@ public class LoginController {
 	
 	
 	@Post("/autenticar")
-	public void autenticar(Pessoa pessoa){
-		System.out.println("======================== email "+pessoa.getEmail());
-		System.out.println("======================== senha "+pessoa.getSenha());
-		Pessoa pessoaParaAutenticar = pessoaDao.autenticar(pessoa.getEmail(), pessoa.getSenha());
+	public void autenticar(Usuario usuario){
+
+		Adestrador pessoaParaAutenticar = usuarioDao.autenticar(usuario.getEmail(), usuario.getSenha());
 		
 		if( pessoaParaAutenticar != null ){
 			
 			usuarioLogado.logar(pessoaParaAutenticar);
 		
-			result.redirectTo(PessoaController.class).form();
+			result.redirectTo(HomeController.class).home();
 			
 		}else{
 			
@@ -41,7 +41,8 @@ public class LoginController {
 			
 		}
 	}
-	
+
+	@Post("/logout")
 	public void logout(){
 		usuarioLogado.deslogar();
 		result.redirectTo(this).login();

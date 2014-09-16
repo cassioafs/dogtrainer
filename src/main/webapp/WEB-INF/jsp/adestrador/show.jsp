@@ -1,13 +1,10 @@
-<h1 class="ls-title-intro ls-ico-users"> <fmt:message key="label.cadastro.pessoas"/> </h1>
+<h1 class="ls-title-intro ls-ico-users"> <fmt:message key="label.cadastro.adestradors"/> </h1>
 <p>
-	<a href="<c:url value="/pessoa/${pessoa.id}/edit"/>" class="ls-btn"> <fmt:message
+	<a href="<c:url value="/adestrador/1/edit"/>" class="ls-btn"> <fmt:message
 			key="label.padrao.alterar" />
 	</a>
-</p>
-
-<p>
-	<a href="<c:url value="/usuario/form"/>" class="ls-btn"> <fmt:message
-			key="label.padrao.criar.usuario" />
+	
+	<a href="<c:url value="/usuario/form"/>" class="ls-btn">Criar usuario
 	</a>
 </p>
 
@@ -16,98 +13,84 @@
  	<label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.nome"/>:</b>
-	      	${pessoa.nome}
+	      	${adestrador.nome}
       	</span>
       </label>
 	      	
  	<label class="ls-label col-md-6 col-lg-8">
  		<span>
-        <b class="ls-label-text"><fmt:message key="label.email"/>:</b>
-	      	${pessoa.email}
-      	</span>
-      </label>
- 	
- 	<label class="ls-label col-md-6 col-lg-8">
- 		<span>
-        <b class="ls-label-text"><fmt:message key="label.senha"/>:</b>
-	      	${pessoa.senha}
-      	</span>
-      </label>
-
- 	<label class="ls-label col-md-6 col-lg-8">
- 		<span>
         <b class="ls-label-text"><fmt:message key="label.sobrenome"/>:</b>
-	      	${pessoa.sobrenome}
+	      	${adestrador.sobrenome}
       	</span>
       </label>
       
  	<label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.idade"/>:</b>
-	      	${pessoa.idade}
+	      	${adestrador.idade}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.telefone"/>:</b>
-	      	${pessoa.telefone}
+	      	${adestrador.telefone}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.celular"/>:</b>
-	      	${pessoa.celular}
+	      	${adestrador.celular}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.cep"/>:</b>
-	      	${pessoa.cep}
+	      	${adestrador.cep}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.endereco"/>:</b>
-	      	${pessoa.logradouro}
+	      	${adestrador.logradouro}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.numero"/>:</b>
-	      	${pessoa.numero}
+	      	${adestrador.numero}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.complemento"/>:</b>
-	      	${pessoa.complemento}
+	      	${adestrador.complemento}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.bairro"/>:</b>
-	      	${pessoa.bairro}
+	      	${adestrador.bairro}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.cidade"/>:</b>
-	      	${pessoa.cidade}
+	      	${adestrador.cidade}
       	</span>
       </label>
       
       <label class="ls-label col-md-6 col-lg-8">
  		<span>
         <b class="ls-label-text"><fmt:message key="label.estado"/>:</b>
-	      	${pessoa.estado}
+	      	${adestrador.estado}
       	</span>
       </label>
  </div>

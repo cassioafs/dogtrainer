@@ -22,16 +22,16 @@
 			<div class="ls-alerts-list">
 				<a href="#" class="ls-ico-bell-o" data-counter="5"
 					data-ls-module="topbarCurtain"
-					data-target="#ls-notification-curtain"><span>Notificações</span></a>
+					data-target="#ls-notification-curtain"><span><fmt:message key="label.notificaoes"/></span></a>
 			</div>
 
 			<!-- User details -->
 			<div data-ls-module="dropdown" class="ls-dropdown ls-user-account">
-				<a href="#" class="ls-ico-user"> Cássio Alves </a>
+				<a href="#" class="ls-ico-user"> ${pessoaLogada.pessoa.nome} </a>
 				<nav class="ls-dropdown-nav ls-user-menu">
 					<ul>
-						<li><a href="<c:url value='/pessoa/show/2'/>">Conta</a></li>
-						<li><a href="#">Logout</a></li>
+						<li><a href="<c:url value='/pessoa/show/${pessoaLogada.pessoa.id}'/>"><fmt:message key="label.conta"/></a></li>
+						<li><a href="<c:url value='/logout'/>"><fmt:message key="label.sair"/></a></li>
 					</ul>
 				</nav>
 			</div>

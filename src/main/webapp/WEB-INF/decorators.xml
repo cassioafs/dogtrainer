@@ -5,6 +5,7 @@
 	<excludes>
 		<pattern>*/</pattern>
 		<pattern>/login</pattern>
+		<pattern>/adestrador/form</pattern>
 		
 	</excludes>
 	
