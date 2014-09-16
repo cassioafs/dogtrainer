@@ -3,6 +3,7 @@ package br.com.dog.trainer.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -17,6 +18,9 @@ public class Adestrador {
 	private String sobrenome;
 	
 	private String idade;
+	
+	@OneToOne
+	private Usuario usuario;
 	
 	private String telefone;
 	private String celular;
@@ -106,5 +110,11 @@ public class Adestrador {
 	}
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }

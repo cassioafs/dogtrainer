@@ -3,9 +3,6 @@
 	<a href="<c:url value="/adestrador/1/edit"/>" class="ls-btn"> <fmt:message
 			key="label.padrao.alterar" />
 	</a>
-	
-	<a href="<c:url value="/usuario/form"/>" class="ls-btn">Criar usuario
-	</a>
 </p>
 
 <div class="ls-box">

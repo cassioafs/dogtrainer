@@ -1,9 +1,7 @@
 package br.com.dog.trainer.dao;
 
- import java.io.Serializable;
-import java.util.List;
+ import java.util.List;
 
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
@@ -17,7 +15,7 @@ public class AdestradorDao{
 	public AdestradorDao() {
 		this(null);
 	}
-	
+
 	@Inject
 	public AdestradorDao(EntityManager entityManager){
 		this.entityManager = entityManager;

@@ -27,11 +27,13 @@ public class LoginController {
 	@Post("/autenticar")
 	public void autenticar(Usuario usuario){
 
-		Adestrador pessoaParaAutenticar = usuarioDao.autenticar(usuario.getEmail(), usuario.getSenha());
+		System.out.println("Email "+usuario.getEmail());
+		System.out.println("Senha "+usuario.getSenha());
+		Usuario usuarioParaAutenticar = usuarioDao.autenticar(usuario.getEmail(), usuario.getSenha());
 		
-		if( pessoaParaAutenticar != null ){
+		if( usuarioParaAutenticar != null ){
 			
-			usuarioLogado.logar(pessoaParaAutenticar);
+			usuarioLogado.logar(usuarioParaAutenticar);
 		
 			result.redirectTo(HomeController.class).home();
 			

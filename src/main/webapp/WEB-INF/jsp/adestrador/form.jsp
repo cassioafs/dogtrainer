@@ -11,7 +11,7 @@
 <body>
 
 <h1 class="ls-title-intro ls-ico-users">
-	<fmt:message key="label.cadastro.adestradors" />
+	<fmt:message key="label.cadastro.adestrador" />
 </h1>
 
 <p>
@@ -41,6 +41,18 @@
 			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
 						key="label.nome" /></span> <input type="text" name="adestrador.nome"
 				value="${adestrador.nome}">
+			</label>
+		</div>
+		<div class="row">
+			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
+						key="label.email" /></span> <input type="text" name="adestrador.usuario.email"
+				value="${adestrador.usuario.email}">
+			</label>
+		</div>
+		<div class="row">
+			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
+						key="label.senha" /></span> <input type="text" name="adestrador.usuario.senha"
+				value="${adestrador.usuario.senha}">
 			</label>
 		</div>
 		

@@ -27,10 +27,10 @@
 
 			<!-- User details -->
 			<div data-ls-module="dropdown" class="ls-dropdown ls-user-account">
-				<a href="#" class="ls-ico-user"> ${pessoaLogada.pessoa.nome} </a>
+				<a href="#" class="ls-ico-user"> ${usuarioLogado.id} </a>
 				<nav class="ls-dropdown-nav ls-user-menu">
 					<ul>
-						<li><a href="<c:url value='/pessoa/show/${pessoaLogada.pessoa.id}'/>"><fmt:message key="label.conta"/></a></li>
+						<li><a href="<c:url value='/adestrador/show/${usuarioLogado.id}'/>"><fmt:message key="label.conta"/></a></li>
 						<li><a href="<c:url value='/logout'/>"><fmt:message key="label.sair"/></a></li>
 					</ul>
 				</nav>
