@@ -6,6 +6,7 @@
 		<pattern>*/</pattern>
 		<pattern>/login</pattern>
 		<pattern>/adestrador/form</pattern>
+		<pattern>/criarUsuario</pattern>
 		
 	</excludes>
 	

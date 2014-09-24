@@ -5,17 +5,17 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-import br.com.dog.trainer.model.Usuario;
+import br.com.dog.trainer.model.UtilizadorDoSitema;
 
 @SessionScoped
-@Named("usuarioLogada")
+@Named("usuarioLogado")
 public class UsuarioLogado implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private Usuario usuario;
+	private UtilizadorDoSitema usuario;
 	
-	public void logar(Usuario usuario ){
+	public void logar(UtilizadorDoSitema usuario ){
 		this.usuario = usuario;
 	}
 	
@@ -27,8 +27,8 @@ public class UsuarioLogado implements Serializable{
 		this.usuario = null;
 	}
 	
-	public Usuario getUsuario(){
+	public UtilizadorDoSitema getUsuarioLogado(){
 		return this.usuario;
 	}
-
+	
 }

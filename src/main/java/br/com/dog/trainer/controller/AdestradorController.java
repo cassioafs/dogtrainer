@@ -10,16 +10,13 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Result;
 import br.com.dog.trainer.dao.AdestradorDao;
-import br.com.dog.trainer.dao.UsuarioDao;
 import br.com.dog.trainer.model.Adestrador;
-import br.com.dog.trainer.model.Usuario;
 import br.com.dog.trainer.rules.LogadoRule;
 
 @Controller
 public class AdestradorController {
 
 	@Inject private AdestradorDao adestradorDao;
-	@Inject private UsuarioDao usuarioDao;
 	@Inject private Result result;
 
 	@Path("/adestrador/form")
@@ -33,9 +30,6 @@ public class AdestradorController {
 
 	@Post("/adestrador")
 	public void insert(Adestrador adestrador) {
-	
-		Usuario usuario = adestrador.getUsuario();
-		usuarioDao.insert(usuario);
 		adestradorDao.insert(adestrador);
 		result.redirectTo(LoginController.class).login();
 	}

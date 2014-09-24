@@ -1,6 +1,7 @@
 package br.com.dog.trainer.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -11,6 +12,9 @@ public class Usuario {
 	private Long id;
 	private String email;
 	private String senha;
+	
+	@Enumerated
+	private TipoUsuario tipoUsuario;
 	
 	public Long getId() {
 		return id;
@@ -30,5 +34,12 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+		
+
 }

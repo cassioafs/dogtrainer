@@ -6,18 +6,19 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.dog.trainer.dao.AdestradorDao;
 import br.com.dog.trainer.dao.UsuarioDao;
-import br.com.dog.trainer.model.Adestrador;
 import br.com.dog.trainer.model.Usuario;
+import br.com.dog.trainer.model.UtilizadorDoSitema;
 import br.com.dog.trainer.sessao.UsuarioLogado;
 
 @Controller
 public class LoginController {
 
-	@Inject private UsuarioLogado usuarioLogado;
-	
 	@Inject private UsuarioDao usuarioDao;
-	
+	@Inject private AdestradorDao adestradorDao;
+	@Inject private UsuarioLogado usuarioLogado;
+	private UtilizadorDoSitema utilizador;
 	@Inject private Result result;
 	
 	@Path("/login")
@@ -29,12 +30,18 @@ public class LoginController {
 
 		System.out.println("Email "+usuario.getEmail());
 		System.out.println("Senha "+usuario.getSenha());
-		Usuario usuarioParaAutenticar = usuarioDao.autenticar(usuario.getEmail(), usuario.getSenha());
+		Usuario usuarioParaAutenticar = usuarioDao.autenticar(usuario.getEmail(), usuario.getSenha()  );
 		
 		if( usuarioParaAutenticar != null ){
+			utilizador = adestradorDao.findByIdUsuario(usuarioParaAutenticar.getId());
 			
-			usuarioLogado.logar(usuarioParaAutenticar);
-		
+//			if(usuarioParaAutenticar.getTipoUsuario().getValor() == TipoUsuario.ADESTRADOR.getValor() ){
+//			}else{
+//				utilizador = new Proprietario();
+//			}
+			
+			usuarioLogado.logar(utilizador);
+			
 			result.redirectTo(HomeController.class).home();
 			
 		}else{

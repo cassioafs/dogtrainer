@@ -4,7 +4,6 @@
 <head>
 <title>Dog Trainer</title>
 
-<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 			<link href="http://assets.locaweb.com.br/locastyle/3.3.0/stylesheets/locastyle.css" rel="stylesheet" type="text/css"/>
 			<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
 </head>

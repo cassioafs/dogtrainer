@@ -4,6 +4,8 @@ package br.com.dog.trainer.dao;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
 
 import br.com.dog.trainer.model.Adestrador;
 
@@ -23,6 +25,17 @@ public class AdestradorDao{
 	}
 	public Adestrador findById(Long id) {
 		return entityManager.find(Adestrador.class, id);
+	}
+	
+	public Adestrador findByIdUsuario(Long idUsuario) {
+			try {
+				Query query = entityManager.createQuery("from Adestrador where usuario_id = ?");
+				query.setParameter(1, idUsuario);
+				return (Adestrador) query.getSingleResult();
+				
+			} catch (NoResultException e) {
+				return null;
+			}
 	}
 
 	public void insert(Adestrador adestrador) {
