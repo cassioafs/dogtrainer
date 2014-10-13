@@ -2,8 +2,8 @@ package br.com.dog.trainer.model;
 
 public enum TipoUsuario {
 
-	ADESTRADOR(1, "Adestrador"), 
-	PROPRIETARIO(2, "Proprietário");
+	ADESTRADOR(0, "Adestrador"), 
+	PROPRIETARIO(1, "Proprietário");
 
 	private int valor;
 	private String descricao;

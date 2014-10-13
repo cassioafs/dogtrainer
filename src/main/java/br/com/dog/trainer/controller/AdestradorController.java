@@ -11,6 +11,7 @@ import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Result;
 import br.com.dog.trainer.dao.AdestradorDao;
 import br.com.dog.trainer.model.Adestrador;
+import br.com.dog.trainer.model.Usuario;
 import br.com.dog.trainer.rules.LogadoRule;
 
 @Controller
@@ -21,7 +22,12 @@ public class AdestradorController {
 
 	@Path("/adestrador/form")
 	public void form() { }
-
+	
+	@Path("/adestrador/completarCadastro/{usuario.id}")
+	public void completarCadastro(Usuario usuario) {
+		
+	}
+	
 	@Get("/adestrador/show/{adestrador.id}")
 	@CustomBrutauthRules(LogadoRule.class)
 	public Adestrador show(Adestrador adestrador) {
@@ -31,6 +37,7 @@ public class AdestradorController {
 	@Post("/adestrador")
 	public void insert(Adestrador adestrador) {
 		adestradorDao.insert(adestrador);
+		
 		result.redirectTo(LoginController.class).login();
 	}
 	

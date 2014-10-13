@@ -27,7 +27,7 @@ public class AdestradorDao{
 		return entityManager.find(Adestrador.class, id);
 	}
 	
-	public Adestrador findByIdUsuario(Long idUsuario) {
+	public Adestrador buscarAdestradorPorId(Long idUsuario) {
 			try {
 				Query query = entityManager.createQuery("from Adestrador where usuario_id = ?");
 				query.setParameter(1, idUsuario);

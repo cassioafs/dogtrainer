@@ -26,7 +26,11 @@ public class UsuarioDao {
 			Query query = entityManager.createQuery("from Usuario where email = ? and senha = ?");
 			query.setParameter(1, email);
 			query.setParameter(2, senha);
-			return (Usuario) query.getSingleResult();
+			Usuario usuario = (Usuario) query.getSingleResult();
+			System.out.println("UsuarioDao.autenticar() "+email);
+			System.out.println("UsuarioDao.autenticar() "+senha);
+			System.out.println(query);
+			return usuario;
 			
 		} catch (NoResultException e) {
 			return null;

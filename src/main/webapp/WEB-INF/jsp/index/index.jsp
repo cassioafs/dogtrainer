@@ -17,7 +17,7 @@
 		</p>
 		<p>
 			 <a
-				href="<c:url value="/adestrador/form"/>"> Clique aqui</a> para fazer seu cadastro
+				href="<c:url value="/criarUsuario"/>"> Clique aqui</a> para fazer seu cadastro
 		</p>
 	</div>
 

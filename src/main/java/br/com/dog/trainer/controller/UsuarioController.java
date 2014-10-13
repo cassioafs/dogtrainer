@@ -23,10 +23,6 @@ public class UsuarioController {
 	public void formularioUsuario() {
 		TipoUsuario[] values = TipoUsuario.values();
 		result.include("tipoUsuarioList", values);
-		for (TipoUsuario tipoUsuario : values) {
-			System.out.println("Tipo "+tipoUsuario.getValor() + " - "+tipoUsuario.getDescricao());
-		}
-		
 	}
 	
 	

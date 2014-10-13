@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<c:set var="jsDir" value="${path}/javascripts" />
+<c:set var="jsDir" value="${path}/js" />
 <c:set var="cssDir" value="${path}/stylesheets" />
 <c:set var="imgDir" value="${path}/images" />
 <c:set var="bootstrap" value="${path}/bootstrap" />

@@ -1,6 +1,7 @@
 package br.com.dog.trainer.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +14,7 @@ public class Usuario {
 	private String email;
 	private String senha;
 	
-	@Enumerated
+	@Enumerated(EnumType.ORDINAL)
 	private TipoUsuario tipoUsuario;
 	
 	public Long getId() {
