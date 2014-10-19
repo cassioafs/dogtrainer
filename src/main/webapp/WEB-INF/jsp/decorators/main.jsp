@@ -9,7 +9,7 @@
 
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 			<script src="${jsDir}/jquery-2.1.1.min.js"></script>
-			<link href="http://assets.locaweb.com.br/locastyle/3.3.0/stylesheets/locastyle.css" rel="stylesheet" type="text/css"/>
+			<link href="${cssDir}/locastyle.css" rel="stylesheet" type="text/css"/>
 			<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
 <decorator:head />
 
@@ -71,7 +71,7 @@
 	</main>
 	
 		<script
-			src="http://assets.locaweb.com.br/locastyle/3.3.0/javascripts/locastyle.js"
+			src="${jsDir}/locastyle.js"
 			type="text/javascript"></script>
 </body>
 </html>

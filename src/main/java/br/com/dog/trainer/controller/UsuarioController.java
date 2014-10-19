@@ -19,20 +19,20 @@ public class UsuarioController {
 	@Inject private UsuarioDao usuarioDao;
 	@Inject private Result result;
 	
-	@Path("/criarUsuario")
+	@Path("/usuario/criar")
 	public void formularioUsuario() {
 		TipoUsuario[] values = TipoUsuario.values();
 		result.include("tipoUsuarioList", values);
 	}
 	
 	
-	@Post("/salvarUsuario")
+	@Post("/usuario/salvar")
 	public void insert(Usuario usuario){
 		System.out.println("User "+usuario.getEmail());
 		System.out.println("senha "+usuario.getSenha());
 		System.out.println("Tipo "+usuario.getTipoUsuario().getValor());
 		usuarioDao.insert(usuario);
-		result.redirectTo(HomeController.class).home();
+		result.redirectTo(LoginController.class).login();
 	}
 
 }

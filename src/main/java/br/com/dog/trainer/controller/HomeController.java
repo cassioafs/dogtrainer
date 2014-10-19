@@ -16,8 +16,8 @@ public class HomeController {
 		
 		System.out.println("==================================================================");
 		
-		System.out.println("Id "+usuarioLogado.getUsuarioLogado().getNome());
-		System.out.println("Nome "+usuarioLogado.getUsuarioLogado().getId());
+		System.out.println("Id "+usuarioLogado.getUtilizadorDoSistema().getNome());
+		System.out.println("Nome "+usuarioLogado.getUtilizadorDoSistema().getId());
 		
 		System.out.println("==================================================================");
 		

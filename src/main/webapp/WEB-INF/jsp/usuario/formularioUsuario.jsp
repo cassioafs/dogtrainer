@@ -23,7 +23,7 @@
 	</a>
 </p>
 
-<form action="<c:url value='/salvarUsuario'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
+<form action="<c:url value='/usuario/salvar'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
 
 	<div class="ls-box">
 

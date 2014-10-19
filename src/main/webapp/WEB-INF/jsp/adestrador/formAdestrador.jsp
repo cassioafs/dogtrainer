@@ -24,37 +24,32 @@
 </p>
 
 <c:if test="${empty adestrador.id}">
-		<input type="hidden" name="_method" value="post"/>
+	<input type="hidden" name="_method" value="post"/>
 </c:if>
 
 <form action="<c:url value='/adestrador'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
 
 
 <c:if test="${not empty adestrador.id}">
-		<input type="hidden" name="adestrador.id" value="${adestrador.id}"/>
-		<input type="hidden" name="_method" value="put"/>
+	<input type="hidden" name="adestrador.id" value="${adestrador.id}"/>
+	<input type="hidden" name="_method" value="put"/>
 </c:if>
+
+<c:if test="${empty adestrador.id}">
+	<input type="hidden" name="adestrador.usuario.id" value="${usuario.id}"/>
+</c:if>
+
+
 	<div class="ls-box">
 
 		<div class="row">
-			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
-						key="label.nome" /></span> <input type="text" name="adestrador.nome"
-				value="${adestrador.nome}">
+			<label class="ls-label col-md-4"> 
+				<span class="ls-label-text">
+					<fmt:message key="label.nome" /> cassioooooo ${usuario.id}
+				</span> 
+				<input type="text" name="adestrador.nome" value="${adestrador.nome}">
 			</label>
 		</div>
-		<div class="row">
-			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
-						key="label.email" /></span> <input type="text" name="adestrador.usuario.email"
-				value="${adestrador.usuario.email}">
-			</label>
-		</div>
-		<div class="row">
-			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
-						key="label.senha" /></span> <input type="text" name="adestrador.usuario.senha"
-				value="${adestrador.usuario.senha}">
-			</label>
-		</div>
-		
 
 		<div class="row">
 			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message

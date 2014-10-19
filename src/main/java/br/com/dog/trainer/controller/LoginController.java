@@ -38,19 +38,19 @@ public class LoginController {
 				utilizador = adestradorDao.buscarAdestradorPorId(usuarioParaAutenticar.getId());
 				
 				if(utilizador == null){
-					result.redirectTo(AdestradorController.class).form();
+					result.redirectTo(AdestradorController.class).formAdestrador(usuarioParaAutenticar);
 				}else{
 					result.redirectTo(HomeController.class).home();
-					
+					usuarioLogado.logar(utilizador);		
 				}
 					
 			}else{
 				utilizador = new Proprietario();
 			}
 			
-			usuarioLogado.logar(utilizador);
 			
-			result.redirectTo(HomeController.class).home();
+			
+//			result.redirectTo(HomeController.class).home();
 			
 		}else{
 			

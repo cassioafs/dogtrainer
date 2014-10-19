@@ -13,22 +13,26 @@ public class UsuarioLogado implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private UtilizadorDoSitema usuario;
+	private UtilizadorDoSitema utilizadorDoSistema;
 	
 	public void logar(UtilizadorDoSitema usuario ){
-		this.usuario = usuario;
+		this.utilizadorDoSistema = usuario;
 	}
 	
 	public boolean isLogado(){
-		return usuario != null;
+		return utilizadorDoSistema != null;
 	}
 	
 	public void deslogar(){
-		this.usuario = null;
+		this.utilizadorDoSistema = null;
 	}
 	
-	public UtilizadorDoSitema getUsuarioLogado(){
-		return this.usuario;
+	public UtilizadorDoSitema getUtilizadorDoSistema(){
+		return this.utilizadorDoSistema;
+	}
+	
+	public int getTipoDeUsuario(){
+		return this.utilizadorDoSistema.getUsuario().getTipoUsuario().getValor();
 	}
 	
 }

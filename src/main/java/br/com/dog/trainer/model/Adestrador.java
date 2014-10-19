@@ -114,5 +114,9 @@ public class  Adestrador implements UtilizadorDoSitema{
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	@Override
+	public Usuario getUsuario() {
+		return this.usuario;
+	}
 
 }

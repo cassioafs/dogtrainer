@@ -8,5 +8,9 @@ public class IndexController {
 
 
 	@Path("/")
-	public void index() { }
+	public void index() { 
+		
+		System.out.println("IndexController.index()========");
+		
+	}
 }

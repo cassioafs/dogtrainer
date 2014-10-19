@@ -20,11 +20,15 @@ public class AdestradorController {
 	@Inject private AdestradorDao adestradorDao;
 	@Inject private Result result;
 
-	@Path("/adestrador/form")
-	public void form() { }
-	
-	@Path("/adestrador/completarCadastro/{usuario.id}")
-	public void completarCadastro(Usuario usuario) {
+	@Path("/adestrador/formAdestrador")
+	public void formAdestrador(Usuario usuario) { 
+		System.out.println("============================================================");
+		
+		System.out.println("AdestradorController.form() NÃO ENCONTROU, VAI CRIAR UM ADESTRADOR");
+		
+		System.out.println("Usuario id "+usuario.getEmail());
+		
+		result.include("usuario", usuario);
 		
 	}
 	
@@ -36,9 +40,10 @@ public class AdestradorController {
 
 	@Post("/adestrador")
 	public void insert(Adestrador adestrador) {
+
 		adestradorDao.insert(adestrador);
 		
-		result.redirectTo(LoginController.class).login();
+		result.redirectTo(HomeController.class).home();
 	}
 	
 	@Get("/adestrador/{adestrador.id}/edit")

@@ -40,5 +40,10 @@ public class Proprietario implements UtilizadorDoSitema  {
 		this.nome = nome;
 	}
 
+	@Override
+	public Usuario getUsuario() {
+		return this.usuario;
+	}
+
 	
 }
