@@ -12,12 +12,11 @@
 		<p>
 
 			Essa é a index alterada de novo, ainda falta muita coisa pra fazer, clique aqui para
-			ver a tela de login <a href="<c:url value="/login"/>"> Tela deLogin</a>;
+			ver a tela de login novo irado<a href="<c:url value="/login"/>"> Tela deLogin</a>;
 			
 		</p>
 		<p>
-			 <a
-				href="<c:url value="/usuario/criar"/>"> Clique aqui</a> para fazer seu cadastro
+			 <a href="<c:url value="/usuario/criar"/>"> Clique aqui</a> para fazer seu cadastro
 		</p>
 	</div>
 

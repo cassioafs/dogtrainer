@@ -13,12 +13,15 @@ import br.com.dog.trainer.dao.AdestradorDao;
 import br.com.dog.trainer.model.Adestrador;
 import br.com.dog.trainer.model.Usuario;
 import br.com.dog.trainer.rules.LogadoRule;
+import br.com.dog.trainer.sessao.UsuarioLogado;
 
 @Controller
 public class AdestradorController {
 
 	@Inject private AdestradorDao adestradorDao;
+	@Inject private UsuarioLogado usuarioLogado;
 	@Inject private Result result;
+	
 
 	@Path("/adestrador/formAdestrador")
 	public void formAdestrador(Usuario usuario) { 
@@ -26,7 +29,7 @@ public class AdestradorController {
 		
 		System.out.println("AdestradorController.form() NÃO ENCONTROU, VAI CRIAR UM ADESTRADOR");
 		
-		System.out.println("Usuario id "+usuario.getEmail());
+		System.out.println("Usuario id "+usuario.getLogin());
 		
 		result.include("usuario", usuario);
 		
@@ -42,7 +45,7 @@ public class AdestradorController {
 	public void insert(Adestrador adestrador) {
 
 		adestradorDao.insert(adestrador);
-		
+		usuarioLogado.logar(adestrador);
 		result.redirectTo(HomeController.class).home();
 	}
 	

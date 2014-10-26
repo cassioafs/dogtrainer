@@ -17,10 +17,6 @@
 	<button type="submit" class="ls-btn" id="salvar">
 		<fmt:message key="label.padrao.salvar" />
 	</button>
-
-	<a href="<c:url value='/adestrador/show/1'/>" class="ls-btn-danger"> <fmt:message
-			key="label.padrao.cancelar" />
-	</a>
 </p>
 
 <form action="<c:url value='/usuario/salvar'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
@@ -29,7 +25,7 @@
 
 		<div class="row">
 			<label class="ls-label col-md-4"> <span class="ls-label-text"><fmt:message
-						key="label.email" /></span> <input type="text" name="usuario.email">
+						key="label.email" /></span> <input type="text" name="usuario.login">
 			</label>
 		</div>
 

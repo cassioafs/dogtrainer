@@ -26,7 +26,7 @@
         <fieldset>
 
           <label class="ls-label">
-            <input class="ls-login-bg-user ls-field-lg" type="text" name="usuario.email" placeholder="<fmt:message key="label.email"/>" required autofocus>
+            <input class="ls-login-bg-user ls-field-lg" type="text" name="usuario.login" placeholder="<fmt:message key="label.usuario"/>" required autofocus>
           </label>
 
           <label class="ls-label">
@@ -37,7 +37,7 @@
           <p><a class="ls-login-forgot" href="forgot-password"><fmt:message key="label.esqueci.senha"/></a></p>
 
           <input type="submit" value="Entrar" class="ls-btn-primary ls-btn-block ls-btn-lg">
-          <p class="ls-txt-center ls-login-signup"> <a href="/pessoa/form" ><fmt:message key="label.cadastre"/></a></p>
+          <p class="ls-txt-center ls-login-signup"> <a href="<c:url value="/usuario/criar"/>"><fmt:message key="label.cadastre"/></a></p>
 
         </fieldset>
       </form>

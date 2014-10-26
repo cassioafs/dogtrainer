@@ -29,7 +29,7 @@ public class LoginController {
 	@Post("/autenticar")
 	public void autenticar(Usuario usuario){
 
-		Usuario usuarioParaAutenticar = usuarioDao.autenticar(usuario.getEmail(), usuario.getSenha()  );
+		Usuario usuarioParaAutenticar = usuarioDao.autenticar(usuario.getLogin(), usuario.getSenha()  );
 		
 		if( usuarioParaAutenticar != null ){
 			

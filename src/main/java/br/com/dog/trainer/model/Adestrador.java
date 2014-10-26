@@ -16,6 +16,7 @@ public class  Adestrador implements UtilizadorDoSitema{
 	
 	private String sobrenome;
 	private String nome;
+	private String email;
 	
 	private String idade;
 	
@@ -117,6 +118,12 @@ public class  Adestrador implements UtilizadorDoSitema{
 	@Override
 	public Usuario getUsuario() {
 		return this.usuario;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

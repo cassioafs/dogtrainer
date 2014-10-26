@@ -5,9 +5,8 @@
 	<excludes>
 		<pattern>*/</pattern>
 		<pattern>/login</pattern>
-		<pattern>/adestrador/form</pattern>
+		<pattern>/adestrador/formAdestrador</pattern>
 		<pattern>/usuario/criar</pattern>
-		
 	</excludes>
 	
 	<decorator name="main" page="main.jsp">

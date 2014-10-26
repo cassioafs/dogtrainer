@@ -21,13 +21,13 @@ public class UsuarioDao {
 	}
 	
 
-	public Usuario autenticar ( String email, String senha ){
+	public Usuario autenticar ( String login, String senha ){
 		try {
-			Query query = entityManager.createQuery("from Usuario where email = ? and senha = ?");
-			query.setParameter(1, email);
+			Query query = entityManager.createQuery("from Usuario where login = ? and senha = ?");
+			query.setParameter(1, login);
 			query.setParameter(2, senha);
 			Usuario usuario = (Usuario) query.getSingleResult();
-			System.out.println("UsuarioDao.autenticar() "+email);
+			System.out.println("UsuarioDao.autenticar() "+login);
 			System.out.println("UsuarioDao.autenticar() "+senha);
 			System.out.println(query);
 			return usuario;

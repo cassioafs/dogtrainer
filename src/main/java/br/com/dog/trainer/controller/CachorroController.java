@@ -2,7 +2,6 @@ package br.com.dog.trainer.controller;
 
 import javax.inject.Inject;
 
-import br.com.caelum.brutauth.auth.annotations.CustomBrutauthRules;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
@@ -12,7 +11,6 @@ import br.com.caelum.vraptor.Result;
 import br.com.dog.trainer.dao.CachorroDao;
 import br.com.dog.trainer.dao.RacaDao;
 import br.com.dog.trainer.model.Cachorro;
-import br.com.dog.trainer.rules.LogadoRule;
 
 @Controller
 public class CachorroController {
