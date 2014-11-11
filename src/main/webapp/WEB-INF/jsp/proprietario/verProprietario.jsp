@@ -1,10 +1,18 @@
 <h1 class="ls-title-intro ls-ico-users"> 	<fmt:message key="label.cadastro.proprietario" /> </h1>
 <p>
-	<a href="<c:url value="/proprietario/${proprietario.id}/editarProprietario"/>" class="ls-btn"> <fmt:message
-			key="label.padrao.alterar" />
+	<a href="<c:url value="/listarProprietarios"/>" class="ls-btn">
+		<i class="fa fa-reply"></i>
+		<fmt:message key="label.padrao.voltar" />
 	</a>
-	<a href="<c:url value="/listarProprietarios"/>" class="ls-btn"> <fmt:message
-			key="label.padrao.voltar" />
+	
+	<a href="<c:url value="/proprietario/${proprietario.id}/editarProprietario"/>" class="ls-btn-primary">
+		<i class="fa fa-edit"></i> 
+		<fmt:message key="label.padrao.alterar" />
+	</a>
+	
+	<a href="<c:url value="/cachorro/${cachorro.id}/editarCachorro"/>" class="ls-btn-danger">
+		<i class="fa fa-minus-circle"></i> 
+		<fmt:message key="label.padrao.excluir" />
 	</a>
 </p>
 

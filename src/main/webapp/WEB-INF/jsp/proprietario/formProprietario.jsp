@@ -9,12 +9,14 @@
 
 <form action="<c:url value='/proprietario'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
 <p>
-	<button type="submit" class="ls-btn" id="salvar">
+	<button type="submit" class="ls-btn-primary" id="salvar">
+		<i class="fa fa-floppy-o"></i>
 		<fmt:message key="label.padrao.salvar" />
 	</button>
 
-	<a href="<c:url value='/listarProprietarios'/>" class="ls-btn-danger"> <fmt:message
-			key="label.padrao.cancelar" />
+	<a href="<c:url value='/listarProprietarios'/>" class="ls-btn-danger">
+		<i class="fa fa-close"></i>
+		<fmt:message key="label.padrao.cancelar" />
 	</a>
 </p>
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import br.com.dog.trainer.model.Cachorro;
 
@@ -32,7 +33,10 @@ public class CachorroDao {
 		entityManager.merge(cachorro);
 	}	
 
-	public List<Cachorro> findAll() {
-		return entityManager.createQuery("from Cachorro", Cachorro.class).getResultList();
+	@SuppressWarnings("unchecked")
+	public List<Cachorro> buscarTodosDoAdestrador(Long idAdestrador) {
+	 	Query query = entityManager.createQuery("from Cachorro where adestrador_id = ?", Cachorro.class);
+		query.setParameter(1, idAdestrador);
+		return query.getResultList();
 	}
 }

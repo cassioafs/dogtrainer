@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-
-<html class="ls-theme-light-green ls-screen-lg">
-<head>
-<title>Dog Trainer</title>
-
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#date").mask("00/00/0000");
@@ -26,8 +20,6 @@
 		alert('A data ' + $("#date").val() + ' é valida: ' + dataValida);
 	}
 </script>
-</head>
-<body>
 	<h1 class="ls-title-intro ls-ico-users">
 		<c:choose>
 			<c:when test="${empty cachorro.id}">
@@ -40,18 +32,21 @@
 	</h1>
 
 	<p>
-		<button type="submit" class="ls-btn" id="salvar">
+		<button type="submit" class="ls-btn ls-btn-primary" id="salvar">
+		<i class="fa fa-floppy-o"></i>
 			<fmt:message key="label.padrao.salvar" />
 		</button>
-
+		
 		<c:choose>
 			<c:when test="${empty cachorro.id}">
-				<a href="<c:url value='/cachorro'/>" class="ls-btn-danger">
+				<a href="<c:url value='/listarCachorros'/>" class="ls-btn-danger">
+					<i class="fa fa-close"></i>
 					<fmt:message key="label.padrao.cancelar" />
 				</a>
 			</c:when>
 			<c:otherwise>
-				<a href="<c:url value='/cachorro/show/${cachorro.id}'/>" class="ls-btn-danger">
+				<a href="<c:url value='/cachorro/verCachorro/${cachorro.id}'/>" class="ls-btn-danger">
+					<i class="fa fa-close"></i>
 					<fmt:message key="label.padrao.cancelar" />
 				</a>
 			</c:otherwise>
@@ -76,11 +71,18 @@
 		<div class="ls-box">
 
 			<div class="row">
-				<label class="ls-label col-md-4"> <span
-					class="ls-label-text"><fmt:message key="label.nome" /></span> <input
-					type="text" name="cachorro.nome" value="${cachorro.nome}">
+				<label class="ls-label col-md-4"> <span class="ls-label-text" ><fmt:message key="label.nome" /></span> <input
+					type="text" name="cachorro.nome" value="${cachorro.nome}" style="float:left;">
 				</label>
 			</div>
+			
+			<div class="row">
+				<label class="ls-label col-md-4"> <span
+					class="ls-label-text"><fmt:message key="label.apelido" /></span> <input
+					type="text" name="cachorro.apelido" value="${cachorro.apelido}">
+				</label>
+			</div>
+			
 			<div class="row">
 				<label class="ls-label col-md-4"> <span
 					class="ls-label-text"><fmt:message key="label.raca" /></span> <br>
@@ -103,6 +105,29 @@
 				</select>
 				</label>
 			</div>
+			
+			<div class="row">
+				<label class="ls-label col-md-4"> <span
+					class="ls-label-text"><fmt:message key="label.proprietario" /></span> <br>
+					<select style="width: 200px; height: 30px;"
+					data-ls-module="dropdown" class="ls-dropdown ls-pos-right"
+					name="cachorro.proprietario.id">
+						<option hidden="hidden"><fmt:message
+								key="label.seleciona.proprietario" /></option>
+						<c:forEach var="proprietario" items="${proprietarioList}">
+
+							<c:choose>
+								<c:when test="${proprietario.id eq cachorro.proprietario.id}">
+									<option selected="selected" value="${proprietario.id}">${proprietario.nome}</option>
+								</c:when>
+								<c:otherwise>
+									<option value="${proprietario.id}">${proprietario.nome}</option>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+				</select>
+				</label>
+			</div>
 			<div class="row">
 				<label class="ls-label col-md-4"> <span
 					class="ls-label-text"><fmt:message
@@ -113,7 +138,3 @@
 			</div>
 		</div>
 	</form>
-
-</body>
-</html>
-

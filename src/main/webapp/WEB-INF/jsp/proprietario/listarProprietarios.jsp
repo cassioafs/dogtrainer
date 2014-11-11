@@ -1,5 +1,9 @@
-<h3 class="ls-title-intro ls-ico-users"> 	<fmt:message key="label.cadastro.proprietario" /> </h3>
-	<button type="submit" class="ls-btn" id="incluir">
+<h3 class="ls-title-intro ls-ico-users"> 
+	<fmt:message key="label.cadastro.proprietario" /> 
+</h3>
+
+	<button type="submit" class="ls-btn-primary" id="incluir">
+		<i class="fa fa-plus-circle"></i>
 		<fmt:message key="label.padrao.incluir" />
 	</button>
 	

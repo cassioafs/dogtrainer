@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html class="ls-theme-light-green ls-screen-lg">
+<html class="ls-theme-green">
 <head>
 <title>Dog Trainer</title>
 
@@ -51,11 +51,11 @@
 		<nav class="ls-menu">
 			<ul>
 				<li><a href="#" class="fa fa-home"> <fmt:message key="label.menu.pagina.inicial"/></a></li>
-				<li><a href="#" class="fa fa-github-alt"><fmt:message key="label.menu.caes"/></a></li>
+				<li><a href="<c:url value='/listarCachorros'/>" class="fa fa-github-alt"><fmt:message key="label.menu.caes"/></a></li>
 				<li><a href="<c:url value='/listarProprietarios'/>" class="fa fa-user"> <fmt:message key="label.menu.proprietarios"/></a></li>
+				<li><a href="#" class="fa fa-hand-o-right"><fmt:message key="label.menu.comandos"/></a></li>
 				<li><a href="#" class="fa fa-book"><fmt:message key="label.menu.aulas"/></a></li>
 				<li><a href="#" class="fa fa-calendar"><fmt:message key="label.menu.agenda"/></a></li>
-				<li><a href="#" class="fa fa-hand-o-right"><fmt:message key="label.menu.comandos"/></a></li>
 				<li><a href="#" class="fa fa-image"><fmt:message key="label.menu.galeria"/></a></li>
 				<li><a href="#" class="fa fa-area-chart"><fmt:message key="label.menu.relatorios"/></a></li>
 			</ul>
