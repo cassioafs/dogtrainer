@@ -8,8 +8,9 @@
 <title>Dog Trainer</title>
 
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-			<script src="${jsDir}/jquery-2.1.1.min.js"></script>
 			<link href="${cssDir}/locastyle.css" rel="stylesheet" type="text/css"/>
+			<link href="${cssDir}/select2.css" rel="stylesheet" type="text/css"/>
+			<script src="${jsDir}/jquery-2.1.1.min.js"></script>
 			<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
 <decorator:head />
 
@@ -70,8 +71,7 @@
 	</div>
 	</main>
 	
-		<script
-			src="${jsDir}/locastyle.js"
-			type="text/javascript"></script>
+		<script src="${jsDir}/locastyle.js"></script>
+		<script src="${jsDir}/select2.js"></script>
 </body>
 </html>

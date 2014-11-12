@@ -1,10 +1,10 @@
 <script type="text/javascript">
 	$(document).ready(function() {
+
 		$("#date").mask("00/00/0000");
-
-	});
-
-	$(document).ready(function() {
+      	
+		$("#selecionaRaca").select2();
+		$("#selecionaProprietario").select2();
 
 		$("#salvar").click(function() {
 
@@ -87,8 +87,10 @@
 				<label class="ls-label col-md-4"> <span
 					class="ls-label-text"><fmt:message key="label.raca" /></span> <br>
 					<select style="width: 200px; height: 30px;"
-					data-ls-module="dropdown" class="ls-dropdown ls-pos-right"
-					name="cachorro.raca.id">
+						data-ls-module="dropdown" class="ls-dropdown ls-pos-right"
+						name="cachorro.raca.id"
+						id="selecionaRaca"
+						>
 						<option hidden="hidden"><fmt:message
 								key="label.seleciona.raca" /></option>
 						<c:forEach var="raca" items="${racaCachorroList}">
@@ -111,7 +113,9 @@
 					class="ls-label-text"><fmt:message key="label.proprietario" /></span> <br>
 					<select style="width: 200px; height: 30px;"
 					data-ls-module="dropdown" class="ls-dropdown ls-pos-right"
-					name="cachorro.proprietario.id">
+					name="cachorro.proprietario.id"
+					id="selecionaProprietario"
+					>
 						<option hidden="hidden"><fmt:message
 								key="label.seleciona.proprietario" /></option>
 						<c:forEach var="proprietario" items="${proprietarioList}">
