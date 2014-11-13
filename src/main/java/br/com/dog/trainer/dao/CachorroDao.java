@@ -31,6 +31,10 @@ public class CachorroDao {
 	
 	public void update(Cachorro cachorro) {
 		entityManager.merge(cachorro);
+	}
+	
+	public void delete(Cachorro cachorro) {
+		entityManager.detach(cachorro);
 	}	
 
 	@SuppressWarnings("unchecked")

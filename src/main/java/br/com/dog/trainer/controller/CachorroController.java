@@ -3,6 +3,7 @@ package br.com.dog.trainer.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
@@ -47,18 +48,11 @@ public class CachorroController {
 	@Post("/cachorro")
 	public void insert(Cachorro cachorro) {
 		
-		Long idAdestrador = usuarioLogado.getUtilizadorDoSistema().getId();
-		
-		Adestrador adestrador = new Adestrador();
-		
-		adestrador.setId(idAdestrador);
-		
-		cachorro.setAdestrador(adestrador);
+		this.setAdestrador(cachorro);
 		
 		cachorroDao.insert(cachorro);
 		result.redirectTo(this).verCachorro(cachorro);
 	}
-	
 	@Get("/cachorro/{cachorro.id}/editarCachorro")
 	public Cachorro editarCachorro(Cachorro cachorro){
 		
@@ -71,8 +65,25 @@ public class CachorroController {
 	
 	@Put("/cachorro")
 	public void update(Cachorro cachorro) {
+		this.setAdestrador(cachorro);
 		cachorroDao.update(cachorro);
-		result.redirectTo(CachorroController.class).verCachorro(cachorro);
+		result.redirectTo(this).verCachorro(cachorro);
+	}
+	
+	@Delete("/cachorro")
+	public void delete(Cachorro cachorro) {
+		cachorroDao.delete(cachorro);
+		result.redirectTo(this).listarCachorros();
+	}
+	
+	private void setAdestrador(Cachorro cachorro) {
+		Long idAdestrador = usuarioLogado.getUtilizadorDoSistema().getId();
+		
+		Adestrador adestrador = new Adestrador();
+		
+		adestrador.setId(idAdestrador);
+		
+		cachorro.setAdestrador(adestrador);
 	}
 
 }

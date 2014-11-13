@@ -11,6 +11,7 @@
 		<class>br.com.dog.trainer.model.Proprietario</class>
 		<class>br.com.dog.trainer.model.Raca</class>
 		<class>br.com.dog.trainer.model.Cachorro</class>
+		<class>br.com.dog.trainer.model.Comando</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<!-- ******************************************************* -->
