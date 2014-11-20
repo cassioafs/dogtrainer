@@ -1,0 +1,5 @@
+AUTODEPLOY_TARGET=/home/cassio/java/wildfly-8.1.0.Final/standalone/deployments
+EXTRACT_ARTIFACTS=false
+HOTDEPLOY_TARGET=/home/cassio/java/wildfly-8.1.0.Final/standalone/deployments
+WILDFLY_SUPPORT=true
+eclipse.preferences.version=1

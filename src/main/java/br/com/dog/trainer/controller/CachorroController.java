@@ -14,6 +14,7 @@ import br.com.dog.trainer.dao.ProprietarioDao;
 import br.com.dog.trainer.dao.RacaDao;
 import br.com.dog.trainer.model.Adestrador;
 import br.com.dog.trainer.model.Cachorro;
+import br.com.dog.trainer.model.Proprietario;
 import br.com.dog.trainer.sessao.UsuarioLogado;
 
 @Controller
@@ -42,7 +43,7 @@ public class CachorroController {
 	
 	@Get("/cachorro/verCachorro/{cachorro.id}")
 	public Cachorro verCachorro(Cachorro cachorro) {
-		return cachorroDao.findById(cachorro.getId());
+		return cachorroDao.buscarPorId(cachorro.getId());
 	}
 
 	@Post("/cachorro")
@@ -50,29 +51,29 @@ public class CachorroController {
 		
 		this.setAdestrador(cachorro);
 		
-		cachorroDao.insert(cachorro);
+		cachorroDao.inserir(cachorro);
 		result.redirectTo(this).verCachorro(cachorro);
 	}
-	@Get("/cachorro/{cachorro.id}/editarCachorro")
+	@Get("/cachorro/editarCachorro/{cachorro.id}")
 	public Cachorro editarCachorro(Cachorro cachorro){
 		
 		idAdestrador = usuarioLogado.getUtilizadorDoSistema().getId();
 		result.include("racaCachorroList", racaDao.findAll());
 		result.include("proprietarioList", proprietarioDao.buscarTodosDoAdestrador(idAdestrador));
 		
-		return cachorroDao.findById(cachorro.getId());
+		return cachorroDao.buscarPorId(cachorro.getId());
 	}
 	
 	@Put("/cachorro")
 	public void update(Cachorro cachorro) {
 		this.setAdestrador(cachorro);
-		cachorroDao.update(cachorro);
+		cachorroDao.atualizar(cachorro);
 		result.redirectTo(this).verCachorro(cachorro);
 	}
 	
-	@Delete("/cachorro")
-	public void delete(Cachorro cachorro) {
-		cachorroDao.delete(cachorro);
+	@Delete("/cachorro/{cachorro.id}")
+	public void remove(Cachorro cachorro) {
+		cachorroDao.excluir(cachorro);
 		result.redirectTo(this).listarCachorros();
 	}
 	

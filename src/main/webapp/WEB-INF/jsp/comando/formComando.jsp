@@ -1,69 +1,37 @@
-<script>
-	$(document).ready(function() {
-
-
-		$("#salvar").click(function() {
-
-			$("form").submit();
-
-		});
-
-	});
-</script>
-
-<h1 class="ls-title-intro ls-ico-users">
-	<fmt:message key="label.cadastro.comando" />
+<h1 class="ls-title-intro">
+	<fmt:message key="label.menu.comandos" />
 </h1>
-
-	<p>
-		<button type="submit" class="ls-btn ls-btn-primary" id="salvar">
+<form action="<c:url value='/comando'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
+	<button type="submit" class="ls-btn-primary" id="salvar" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.salvar"/></p>" data-placement="top">
 		<i class="fa fa-floppy-o"></i>
-			<fmt:message key="label.padrao.salvar" />
-		</button>
-		
-		<c:choose>
-			<c:when test="${empty comando.id}">
-				<a href="<c:url value='/listarComandos'/>" class="ls-btn-danger">
-					<i class="fa fa-close"></i>
-					<fmt:message key="label.padrao.cancelar" />
-				</a>
-			</c:when>
-			<c:otherwise>
-				<a href="<c:url value='/comando/verComando/${comando.id}'/>" class="ls-btn-danger">
-					<i class="fa fa-close"></i>
-					<fmt:message key="label.padrao.cancelar" />
-				</a>
-			</c:otherwise>
-		</c:choose>
+	</button>
 
-	</p>
+	<a href="<c:url value='/listarComandos'/>" class="ls-btn-danger" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.cancelar"/></p>" data-placement="right">
+		<i class="fa fa-close"></i>
+	</a>
 
-	<form action="<c:url value='/comando'/>"
-		class="ls-form ls-form-horizontal row " data-ls-module="form"
-		method="post">
+<c:if test="${not empty comando.id}">
+	<input type="hidden" name="comando.id" value="${comando.id}"/>
+	<input type="hidden" name="_method" value="put"/>
+</c:if>
 
-		<c:choose>
-			<c:when test="${empty comando.id}">
-				<input type="hidden" name="_method" value="post" />
-			</c:when>
-			<c:otherwise>
-				<input type="hidden" name="comando.id" value="${comando.id}" />
-				<input type="hidden" name="_method" value="put" />
-			</c:otherwise>
-		</c:choose>
+<c:if test="${empty comando.id}">
+	<input type="hidden" name="_method" value="post"/>
+</c:if>
+<p>
 
 		<div class="ls-box">
 
 			<div class="row">
 				<label class="ls-label col-md-4"> <span class="ls-label-text" ><fmt:message key="label.nome" /></span> <input
-					type="text" name="comando.nome" value="${comando.nome}" style="float:left;">
+					type="text" name="comando.nome" value="${comando.nome}" style="float:left;" required="required">
 				</label>
 			</div>
 			
 			<div class="row">
 				<label class="ls-label col-md-4"> <span
 					class="ls-label-text"><fmt:message key="label.descricao" /></span> <input
-					type="text" name="comando.descricao" value="${comando.descricao}">
+					type="text" name="comando.descricao" value="${comando.descricao}" required="required">
 				</label>
 			</div>
 			

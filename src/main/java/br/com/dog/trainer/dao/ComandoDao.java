@@ -21,20 +21,20 @@ public class ComandoDao {
 		this.entityManager = entityManager;
 		
 	}
-	public Comando findById(Long id) {
+	public Comando buscarPorId(Long id) {
 		return entityManager.find(Comando.class, id);
 	}
 	
-	public void insert(Comando comando) {
+	public void inserir(Comando comando) {
 		entityManager.persist(comando);
 	}
 	
-	public void update(Comando comando) {
+	public void alterar(Comando comando) {
 		entityManager.merge(comando);
 	}
 	
-	public void delete(Comando comando) {
-		entityManager.detach(comando);
+	public void excluir(Comando comando) {
+		entityManager.remove(entityManager.merge(comando));
 	}	
 
 	@SuppressWarnings("unchecked")

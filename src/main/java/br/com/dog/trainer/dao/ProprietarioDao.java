@@ -48,6 +48,10 @@ public class ProprietarioDao{
 	public void atualizar(Proprietario proprietario) {
 		
 		entityManager.merge(proprietario);
+	}
+	
+	public void excluir(Proprietario proprietario) {
+		entityManager.remove(entityManager.merge(proprietario));
 	}	
 
 	@SuppressWarnings("unchecked")

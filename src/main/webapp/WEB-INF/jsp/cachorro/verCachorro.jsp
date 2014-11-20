@@ -1,20 +1,24 @@
-<h1 class="ls-title-intro ls-ico-users"> <fmt:message key="label.cadastro.cachorro"/> </h1>
+<h1 class="ls-title-intro">
+	<fmt:message key="label.menu.cachorros"/> 
+</h1>
+<form action="<c:url value='/cachorro/${cachorro.id }'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
+
+	<a href="<c:url value="/listarCachorros"/>" class="ls-btn" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.voltar"/></p>" data-placement="top">
+		<i class="fa fa-reply"></i> 
+	</a>
+	
+	<a href="<c:url value="/cachorro/editarCachorro/${cachorro.id}"/>" class="ls-btn" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.alterar"/></p>" data-placement="top">
+		<i class="fa fa-edit"></i> 
+	</a>
+	
+	<button type="submit" onclick="return confirm('Deseja realmente remover esse projeto?');"
+			class="ls-btn ls-btn-danger" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.excluir"/></p>" data-placement="top">
+		<i class="fa fa-trash"></i>
+	</button> 
+	<input type="hidden" name="_method" value="DELETE">
+	
+</form>
 <p>
-	<a href="<c:url value="/listarCachorros"/>" class="ls-btn">
-		<i class="fa fa-reply"></i>
-		<fmt:message key="label.padrao.voltar" />
-	</a>
-	
-	<a href="<c:url value="/cachorro/${cachorro.id}/editarCachorro"/>" class="ls-btn-primary"> 
-		<i class="fa fa-edit"></i>
-		<fmt:message key="label.padrao.alterar" />
-	</a>
-	
-	<a href="<c:url value="/cachorro/${cachorro.id}/editarCachorro"/>" class="ls-btn-danger">
-		<i class="fa fa-minus-circle"></i> 
-		<fmt:message key="label.padrao.excluir" />
-	</a>
-</p>
 
 <div class="ls-box">
  	

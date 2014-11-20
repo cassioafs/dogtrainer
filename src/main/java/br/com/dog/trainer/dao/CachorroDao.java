@@ -21,20 +21,20 @@ public class CachorroDao {
 		this.entityManager = entityManager;
 		
 	}
-	public Cachorro findById(Long id) {
+	public Cachorro buscarPorId(Long id) {
 		return entityManager.find(Cachorro.class, id);
 	}
 	
-	public void insert(Cachorro cachorro) {
+	public void inserir(Cachorro cachorro) {
 		entityManager.persist(cachorro);
 	}
 	
-	public void update(Cachorro cachorro) {
+	public void atualizar(Cachorro cachorro) {
 		entityManager.merge(cachorro);
 	}
 	
-	public void delete(Cachorro cachorro) {
-		entityManager.detach(cachorro);
+	public void excluir(Cachorro cachorro) {
+		entityManager.remove(entityManager.merge(cachorro));
 	}	
 
 	@SuppressWarnings("unchecked")

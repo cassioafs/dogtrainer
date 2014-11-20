@@ -6,12 +6,6 @@
 		$("#selecionaRaca").select2();
 		$("#selecionaProprietario").select2();
 
-		$("#salvar").click(function() {
-
-			$("form").submit();
-
-		});
-
 	});
 
 	function validarData() {
@@ -20,66 +14,41 @@
 		alert('A data ' + $("#date").val() + ' é valida: ' + dataValida);
 	}
 </script>
-	<h1 class="ls-title-intro ls-ico-users">
-		<c:choose>
-			<c:when test="${empty cachorro.id}">
-				<fmt:message key="label.cadastro.cachorro" />
-			</c:when>
-			<c:otherwise>
-				<fmt:message key="label.edicao.cachorro" />
-			</c:otherwise>
-		</c:choose>
-	</h1>
+<h1 class="ls-title-intro">
+	<fmt:message key="label.menu.cachorros" />
+</h1>
 
-	<p>
-		<button type="submit" class="ls-btn ls-btn-primary" id="salvar">
+<form action="<c:url value='/cachorro'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
+	<button type="submit" class="ls-btn-primary" id="salvar" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.salvar"/></p>" data-placement="top">
 		<i class="fa fa-floppy-o"></i>
-			<fmt:message key="label.padrao.salvar" />
-		</button>
-		
-		<c:choose>
-			<c:when test="${empty cachorro.id}">
-				<a href="<c:url value='/listarCachorros'/>" class="ls-btn-danger">
-					<i class="fa fa-close"></i>
-					<fmt:message key="label.padrao.cancelar" />
-				</a>
-			</c:when>
-			<c:otherwise>
-				<a href="<c:url value='/cachorro/verCachorro/${cachorro.id}'/>" class="ls-btn-danger">
-					<i class="fa fa-close"></i>
-					<fmt:message key="label.padrao.cancelar" />
-				</a>
-			</c:otherwise>
-		</c:choose>
+	</button>
 
-	</p>
+	<a href="<c:url value='/listarCachorros'/>" class="ls-btn-danger" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.cancelar"/></p>" data-placement="right">
+		<i class="fa fa-close"></i>
+	</a>
 
-	<form action="<c:url value='/cachorro'/>"
-		class="ls-form ls-form-horizontal row " data-ls-module="form"
-		method="post">
+<c:if test="${not empty cachorro.id}">
+	<input type="hidden" name="cachorro.id" value="${cachorro.id}"/>
+	<input type="hidden" name="_method" value="put"/>
+</c:if>
 
-		<c:choose>
-			<c:when test="${empty cachorro.id}">
-				<input type="hidden" name="_method" value="post" />
-			</c:when>
-			<c:otherwise>
-				<input type="hidden" name="cachorro.id" value="${cachorro.id}" />
-				<input type="hidden" name="_method" value="put" />
-			</c:otherwise>
-		</c:choose>
+<c:if test="${empty cachorro.id}">
+	<input type="hidden" name="_method" value="post"/>
+</c:if>
 
+<p>
 		<div class="ls-box">
 
 			<div class="row">
 				<label class="ls-label col-md-4"> <span class="ls-label-text" ><fmt:message key="label.nome" /></span> <input
-					type="text" name="cachorro.nome" value="${cachorro.nome}" style="float:left;">
+					type="text" name="cachorro.nome" value="${cachorro.nome}" required>
 				</label>
 			</div>
 			
 			<div class="row">
 				<label class="ls-label col-md-4"> <span
 					class="ls-label-text"><fmt:message key="label.apelido" /></span> <input
-					type="text" name="cachorro.apelido" value="${cachorro.apelido}">
+					type="text" name="cachorro.apelido" value="${cachorro.apelido}" required>
 				</label>
 			</div>
 			
@@ -90,6 +59,7 @@
 						data-ls-module="dropdown" class="ls-dropdown ls-pos-right"
 						name="cachorro.raca.id"
 						id="selecionaRaca"
+						required
 						>
 						<option hidden="hidden"><fmt:message
 								key="label.seleciona.raca" /></option>
@@ -115,6 +85,7 @@
 					data-ls-module="dropdown" class="ls-dropdown ls-pos-right"
 					name="cachorro.proprietario.id"
 					id="selecionaProprietario"
+					required
 					>
 						<option hidden="hidden"><fmt:message
 								key="label.seleciona.proprietario" /></option>
@@ -135,9 +106,10 @@
 			<div class="row">
 				<label class="ls-label col-md-4"> <span
 					class="ls-label-text"><fmt:message
-							key="label.data.nascimento" /></span> <input type="text"
+							key="label.data.nascimento" /></span> 
+					<input type="text"
 					name="cachorro.dataNascimento" value="${cachorro.dataNascimento}"
-					placeholder="dd/mm/aaaa" id="date" class="datepicker">
+					placeholder="dd/mm/aaaa" id="date" class="datepicker" required>
 				</label>
 			</div>
 		</div>

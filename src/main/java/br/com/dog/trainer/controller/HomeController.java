@@ -14,7 +14,7 @@ public class HomeController {
 	@Path("/home")
 	public void home(){
 		
-		System.out.println("====================================cassio==============================");
+		System.out.println("====================================novo==============================");
 		
 		System.out.println("Id "+usuarioLogado.getUtilizadorDoSistema().getNome());
 		System.out.println("Nome "+usuarioLogado.getUtilizadorDoSistema().getId());

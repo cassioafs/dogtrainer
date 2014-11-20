@@ -23,7 +23,7 @@ public class ComandoController {
 	private Long idAdestrador;
 
 	
-	@Path("/comando/formComando")
+	@Path("/formComando")
 	public void formComando() {
 		idAdestrador = usuarioLogado.getUtilizadorDoSistema().getId();
 	}
@@ -36,7 +36,7 @@ public class ComandoController {
 	
 	@Get("/comando/verComando/{comando.id}")
 	public Comando verComando(Comando comando) {
-		return comandoDao.findById(comando.getId());
+		return comandoDao.buscarPorId(comando.getId());
 	}
 
 	@Post("/comando")
@@ -44,25 +44,25 @@ public class ComandoController {
 		
 		this.setAdestrador(comando);
 		
-		comandoDao.insert(comando);
+		comandoDao.inserir(comando);
 		result.redirectTo(this).verComando(comando);
 	}
 	
-	@Get("/comando/{comando.id}/editarComando")
+	@Get("/comando/editarComando/{comando.id}")
 	public Comando editarComando(Comando comando){
-		return comandoDao.findById(comando.getId());
+		return comandoDao.buscarPorId(comando.getId());
 	}
 	
 	@Put("/comando")
 	public void update(Comando comando) {
 		this.setAdestrador(comando);
-		comandoDao.update(comando);
+		comandoDao.alterar(comando);
 		result.redirectTo(this).verComando(comando);
 	}
 	
-	@Delete("/comando")
+	@Delete("/comando/{comando.id}")
 	public void delete(Comando comando) {
-		comandoDao.delete(comando);
+		comandoDao.excluir(comando);
 		result.redirectTo(this).listarComandos();
 	}
 
