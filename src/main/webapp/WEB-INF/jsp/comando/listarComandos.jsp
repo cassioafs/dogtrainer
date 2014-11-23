@@ -2,7 +2,7 @@
 	<fmt:message key="label.menu.comandos" />
 </h1>
 <form action="<c:url value='/formComando'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
-	<button type="submit" class="ls-btn-primary" id="incluir" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.incluir"/></p>" data-placement="right">
+	<button type="submit" class="btnIncluir">
 		<i class="fa fa-plus-circle"></i>
 	</button>
 </form>

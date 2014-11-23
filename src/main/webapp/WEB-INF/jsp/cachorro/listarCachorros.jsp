@@ -4,7 +4,7 @@
 	
 	
 <form action="<c:url value='/cachorro/formCachorro'/>" id="incluir" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
-	<button type="submit" class="ls-btn-primary" id="incluir" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.incluir"/></p>" data-placement="right">
+	<button type="submit" class="ls-btn-primary btnIncluir">
 		<i class="fa fa-plus-circle"></i>
 	</button>
 </form>
@@ -28,15 +28,15 @@
 			<td>${cachorro.proprietario.nome}</td>
 			<td>
 				<form action="<c:url value='/cachorro/${cachorro.id }'/>" method="POST">
-					<a href="<c:url value='/cachorro/verCachorro/${cachorro.id }'/>" class="ls-btn" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.ver"/></p>" data-placement="top">
+					<a href="<c:url value='/cachorro/verCachorro/${cachorro.id }'/>" class="ls-btn btnVer">
 						<i class="fa fa-eye"></i>
 					</a>
 				
-					<a href="<c:url value='/cachorro/editarCachorro/${cachorro.id }'/>" class="ls-btn" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.editar"/></p>" data-placement="top" >
+					<a href="<c:url value='/cachorro/editarCachorro/${cachorro.id }'/>" class="ls-btn btnEditar">
 						<i class="fa fa-edit"></i>
 					</a>
 					<button type="submit" onclick="return confirm('Deseja realmente remover?');"
-							class="ls-btn ls-btn-danger" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.excluir"/></p>" data-placement="top">
+							class="ls-btn-danger btnExcluir">
 						<i class="fa fa-trash"></i>
 					</button> 
 					<input type="hidden" name="_method" value="DELETE">

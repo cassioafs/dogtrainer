@@ -19,11 +19,11 @@
 </h1>
 
 <form action="<c:url value='/cachorro'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
-	<button type="submit" class="ls-btn-primary" id="salvar" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.salvar"/></p>" data-placement="top">
+	<button type="submit" class="ls-btn-primary btnSalvar">
 		<i class="fa fa-floppy-o"></i>
 	</button>
 
-	<a href="<c:url value='/listarCachorros'/>" class="ls-btn-danger" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.cancelar"/></p>" data-placement="right">
+	<a href="<c:url value='/listarCachorros'/>" class="ls-btn-danger btnCancelar">
 		<i class="fa fa-close"></i>
 	</a>
 

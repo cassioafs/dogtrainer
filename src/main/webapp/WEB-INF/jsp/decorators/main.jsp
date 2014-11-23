@@ -8,11 +8,48 @@
 <title>Dog Trainer</title>
 
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-			<link href="${cssDir}/locastyle.css" rel="stylesheet" type="text/css"/>
-			<link href="${cssDir}/select2.css" rel="stylesheet" type="text/css"/>
 			<script src="${jsDir}/jquery-2.1.1.min.js"></script>
+			<link href="${cssDir}/locastyle.css" rel="stylesheet" type="text/css"/>
+			<script>
+		
+	$(document).ready(function(){
+		
+		var map = {
+				".btnIncluir":'<fmt:message key="label.padrao.incluir"/>',
+				".btnVer":'<fmt:message key="label.padrao.ver"/>',
+				".btnVoltar":'<fmt:message key="label.padrao.voltar"/>',
+				".btnCancelar":'<fmt:message key="label.padrao.cancelar"/>',
+				".btnSalvar":'<fmt:message key="label.padrao.salvar"/>',
+				".btnExcluir":'<fmt:message key="label.padrao.excluir"/>',
+				".btnEditar":'<fmt:message key="label.padrao.editar"/>',
+		};
+		
+		
+		
+		adcionaAtributosBotoes(map);
+	});
+	
+	
+	function adcionaAtributosBotoes(map){
+		
+		
+		$.map( map, function( value, key ) {
+			var $botao = $(key);
+			$botao.addClass("ls-btn");
+			$botao.attr("data-ls-module","popover");
+			$botao.attr("data-trigger","hover");
+			$botao.attr("data-content",'<p>'+value+'</p>');
+			$botao.attr("data-placement","top");
+		});
+	}
+	
+</script>
+			<link href="${cssDir}/select2.css" rel="stylesheet" type="text/css"/>
 			<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+			
 <decorator:head />
+
 
 </head>
 <body>
