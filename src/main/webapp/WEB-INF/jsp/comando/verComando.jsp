@@ -3,16 +3,16 @@
 </h1>
 <form action="<c:url value='/comando/${comando.id }'/>" class="ls-form ls-form-horizontal row " data-ls-module="form" method="post">
 
-	<a href="<c:url value="/listarComandos"/>" class="ls-btn" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.voltar"/></p>" data-placement="top">
+	<a href="<c:url value="/listarComandos"/>" class="ls-btn btnVoltar">
 		<i class="fa fa-reply"></i> 
 	</a>
 	
-	<a href="<c:url value="/comando/editarComando/${comando.id}"/>" class="ls-btn" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.alterar"/></p>" data-placement="top">
+	<a href="<c:url value="/comando/editarComando/${comando.id}"/>" class="ls-btn btnEditar">
 		<i class="fa fa-edit"></i> 
 	</a>
 	
 	<button type="submit" onclick="return confirm('Deseja realmente remover?');"
-			class="ls-btn ls-btn-danger" data-ls-module="popover" data-trigger="hover" data-content="<p><fmt:message key="label.padrao.excluir"/></p>" data-placement="top">
+			class="ls-btn ls-btn-danger btnExcluir">
 		<i class="fa fa-trash"></i>
 	</button> 
 	<input type="hidden" name="_method" value="DELETE">

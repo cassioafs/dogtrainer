@@ -10,7 +10,7 @@
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 			<script src="${jsDir}/jquery-2.1.1.min.js"></script>
 			<link href="${cssDir}/locastyle.css" rel="stylesheet" type="text/css"/>
-			<script>
+<script>
 		
 	$(document).ready(function(){
 		
